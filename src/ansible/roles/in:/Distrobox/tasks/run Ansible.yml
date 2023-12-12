@@ -14,3 +14,6 @@
 - debug:
     msg: "distrobox enter {{ container_name_distrobox }} -- sh {{ run_Ansible_path }}"
   when: debug
+
+- meta: end_play
+  when: debug

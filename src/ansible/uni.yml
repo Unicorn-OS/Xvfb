@@ -1,6 +1,6 @@
 - hosts: test #, localhost #, fedora, ubuntu
   vars:
-    debug: True
+    debug: True #False
     ansible_become_password: u
 
   roles:

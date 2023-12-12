@@ -1,4 +1,4 @@
-connection: "127.0.0.1"
+vnc_connection: "127.0.0.1"
 
 vncviewer: "connect_vncviewer.sh"
 
