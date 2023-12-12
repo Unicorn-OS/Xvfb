@@ -1,1 +1,3 @@
 separate_home_directory: True
+
+home_dir: "{{ ansible_env.HOME }}/distrobox/{{ container_name }}"

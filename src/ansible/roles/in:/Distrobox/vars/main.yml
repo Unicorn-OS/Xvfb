@@ -1,5 +1,3 @@
-home_dir: "{{ ansible_env.HOME }}/distrobox/{{ container_name }}"
-
 install_Ansible: "install_Ansible.sh"
 
 install_Ansible_path: "{{ bin_dir }}/install-Ansible.sh"

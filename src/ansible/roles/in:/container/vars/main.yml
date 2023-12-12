@@ -6,4 +6,6 @@ container_image_distrobox: ubuntu:latest
 container_name_toolbox: "{{ container_name }}_fedora"
 container_image_toolbox: fedora:latest
 
-bin_dir: "{{ ansible_env.HOME }}/.local/bin"
+home_dir: "{{ ansible_env.HOME }}/distrobox/{{ container_name }}"
+
+bin_dir: "{{ home_dir }}/bin"
