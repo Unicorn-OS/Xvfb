@@ -21,6 +21,3 @@
   ansible.builtin.copy:
     src: "{{ remmina_connection_dir }}/{{ remmina_connection_file }}"
     dest: "{{ remmina_connection_path }}"
-
-- name: start connection
-  include_tasks: start Connection.yml 
