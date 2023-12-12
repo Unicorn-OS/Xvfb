@@ -1,3 +1,2 @@
 dependencies:
 - .fn/reboot-handler
-- "in:/default"
