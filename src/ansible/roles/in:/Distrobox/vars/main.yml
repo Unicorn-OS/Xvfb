@@ -3,3 +3,5 @@ home_dir: "{{ ansible_env.HOME }}/distrobox/{{ container_name }}"
 bin_dir: "{{ ansible_env.HOME }}/.local/bin"
 
 install_Ansible: "{{ bin_dir }}/install-Ansible.sh"
+
+ansible_command: "cd {{ repo_dir }}/src/ansible && ansible-playbook in\ Container.yml"

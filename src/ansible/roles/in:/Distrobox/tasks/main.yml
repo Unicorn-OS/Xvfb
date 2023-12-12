@@ -34,5 +34,5 @@
     msg: "distrobox enter {{ container_name_distrobox }}"
   when: debug
 
-- name: Install Ansible
-  include_tasks: run Playbook.yml
+- name: run Ansible
+  include_tasks: run Ansible.yml
