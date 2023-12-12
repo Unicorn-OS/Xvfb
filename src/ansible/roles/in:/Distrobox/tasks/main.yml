@@ -19,23 +19,11 @@
   ansible.builtin.shell: "distrobox create --pull --image {{ container_image_distrobox }} --name {{ container_name_distrobox }} --home {{ home_dir }}"
   async: 3600
   poll: 15
-  when: separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name)
+  when: separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox)
 
 - name: create Distrobox
   ansible.builtin.shell: "distrobox create --pull --image {{ container_image_distrobox }} --name {{ container_name_distrobox }}"
   async: 3600
   poll: 15
-  when: not separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name)
-
-- name: Create bin directory
-  ansible.builtin.file:
-    path: "{{ bin_dir }}"
-    state: directory
-
-- name: template Ansible
-  ansible.builtin.template:
-    src: install-Ansible.sh.j2
-    dest: "{{ bin_dir }}/install-Ansible.sh"
-    mode: '0755'
-
-# - name: Install Ansible in Distrobox
+  when: not separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox)
+  notify: Install Ansible

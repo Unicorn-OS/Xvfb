@@ -1,6 +1,6 @@
 - name: Toolbox container exists?
   containers.podman.podman_container_info:
-    name: "{{ toolbox_container_name }}"
+    name: "{{ container_name_toolbox }}"
   register: toolbox_status
 
 # - name: debug
@@ -10,6 +10,6 @@
 
 - name: create toolbox
   ansible.builtin.shell: toolbox create -y
-  when: toolbox_status.containers | length == 0 or toolbox_status.containers.0.Name != toolbox_container_name
+  when: toolbox_status.containers | length == 0 or toolbox_status.containers.0.Name != container_name_toolbox
   async: 3600
   poll: 15
