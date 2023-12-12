@@ -1,0 +1,11 @@
+---
+
+# - name: Create config directory
+#   ansible.builtin.file:
+#     path: "{{ remmina_config_path }}"
+#     state: directory
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: "{{ remmina_config }}"
+    dest: "{{ remmina_config_path }}"

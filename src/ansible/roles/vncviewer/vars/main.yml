@@ -1,0 +1,2 @@
+remmina_config: ".config/remmina/remmina.pref"
+remmina_config_path: "{{ ansible_env.HOME }}/.config/remmina"

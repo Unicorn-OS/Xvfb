@@ -1,7 +1,8 @@
 ---
 
-- name: Install tigervnc-viewer
+- name: Install Remmina & tigervnc-viewer
   ansible.builtin.apt:
     pkg:
+    - remmina
     - tigervnc-viewer
   become: true

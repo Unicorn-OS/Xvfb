@@ -1,1 +1,6 @@
 ---
+- name: Install Remmina
+  ansible.builtin.dnf:
+    name:
+      - remmina
+    state: latest
