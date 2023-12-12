@@ -1,8 +1,7 @@
-width: 1024
-height: 768
-bit_per_pixel: 16
-
-desktop: "/usr/bin/fluxbox"
+# Cinfigured to match ReDroid, with a little extra padding for "window decorations", a common use case: https://github.com/remote-android/redroid-doc?tab=readme-ov-file#configuration
+width: 1284
+height: 740
+bit_per_pixel: 16 #32
 
 start_script: "start_x11vnc.sh"
 

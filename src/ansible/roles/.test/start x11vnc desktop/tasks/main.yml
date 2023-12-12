@@ -1,3 +1,6 @@
+- name: include Env vars
+  ansible.builtin.include_vars: "{{ role_path | dirname | dirname }}/Env/{{ default_env }}/vars/main.yml"
+
 - name: template start_X11vnc
   ansible.builtin.template:
     src: "{{ start_script }}.j2"

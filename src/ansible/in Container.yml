@@ -3,4 +3,4 @@
   - Xvfb
   - x11vnc
   - vncviewer
-  - Env/Fluxbox
+  - Env/default

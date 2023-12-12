@@ -1,0 +1,7 @@
+---
+
+- name: Install Openbox
+  ansible.builtin.apt:
+    pkg:
+    - openbox
+  become: true
