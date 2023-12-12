@@ -9,10 +9,8 @@
     dest: "{{ repo_dir }}"
   notify: run Ansible
 
-- name: init vars/Env.default
+- name: init vars/*.default
   ansible.builtin.shell: ./.init.sh
   args:
     chdir: "{{ repo_dir }}/src/ansible"
     creates: vars/Env.yml
-
-- meta: end_play
