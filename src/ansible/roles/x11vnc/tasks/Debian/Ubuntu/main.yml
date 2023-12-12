@@ -1,7 +1,7 @@
 ---
 
-- name: Install Xvfb
+- name: Install x11vnc
   ansible.builtin.apt:
     pkg:
-    - xvfb
+    - x11vnc
   become: true

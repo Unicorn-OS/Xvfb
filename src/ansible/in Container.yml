@@ -1,4 +1,5 @@
 - hosts: localhost
   roles:
   - Xvfb
-  # - x11vnc
+  - x11vnc
+  - Env/Fluxbox

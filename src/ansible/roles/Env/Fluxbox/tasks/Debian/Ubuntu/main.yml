@@ -1,7 +1,7 @@
 ---
 
-- name: Install Xvfb
+- name: Install Fluxbox
   ansible.builtin.apt:
     pkg:
-    - xvfb
+    - fluxbox
   become: true
