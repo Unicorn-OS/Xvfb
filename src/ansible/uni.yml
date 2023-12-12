@@ -1,10 +1,10 @@
 - hosts: test #, localhost #, fedora, ubuntu
   vars:
     debug: True
-    default_env: LXDE # Openbox
+    env_desktop: LXDE # Openbox
     # debug_breakpoint: True
     ansible_become_password: u
 
   roles:
-  # - in:/container
+  - in:/container
   - .test/start

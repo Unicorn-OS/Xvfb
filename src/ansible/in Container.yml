@@ -1,4 +1,6 @@
 - hosts: localhost
+  vars:
+    env_desktop: LXDE #Openbox
   roles:
   - Xvfb
   - x11vnc

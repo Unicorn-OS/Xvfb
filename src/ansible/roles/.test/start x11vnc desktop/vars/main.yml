@@ -5,7 +5,7 @@ bit_per_pixel: 16 #32
 
 start_script_template: "start_template.sh"
 
-start_script_path: "{{ bin_dir }}/start_{{ default_env | lower }}.sh"
+start_script_path: "{{ bin_dir }}/start_{{ env_desktop | lower }}.sh"
 
 distrobox_run_script: "distrobox enter {{ container_name_distrobox }} -- sh"
 
