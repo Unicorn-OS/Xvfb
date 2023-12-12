@@ -1,7 +1,15 @@
 connection: "127.0.0.1"
 
-start_script: "connect_vncviewer.sh"
+vncviewer: "connect_vncviewer.sh"
 
-start_script_path: "{{ bin_dir }}/{{ start_script }}"
+vncviewer_path: "{{ bin_dir }}/{{ vncviewer }}"
 
-distrobox_command: "distrobox enter {{ container_name_distrobox }} -- sh {{ start_script_path }}"
+Remmina: "connect_Remmina.sh"
+
+Remmina_path: "{{ bin_dir }}/{{ Remmina }}"
+
+distrobox_command: "distrobox enter {{ container_name_distrobox }} -- sh"
+
+start_vncviewer: "{{ distrobox_command }} {{ vncviewer_path }}"
+
+start_Remmina: "{{ distrobox_command }} {{ Remmina_path }}"

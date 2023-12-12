@@ -1,20 +1,5 @@
-- name: template connect_vncviewer
-  ansible.builtin.template:
-    src: "{{ start_script }}.j2"
-    dest: "{{ start_script_path }}"
-    mode: '0755'
+- name: Remmina
+  include_tasks: Remmina.yml
 
-- name: Run connect_vncviewer
-  ansible.builtin.shell: "{{ distrobox_command }}"
-  async: 3600
-  poll: 15
-  when: not debug
-
-- debug:
-    msg: "{{ distrobox_command }}"
-  when: debug
-
-- name: Add to .bash_history
-  ansible.builtin.lineinfile:
-    path: "{{ ansible_env.HOME }}/.bash_history"
-    line: "{{ distrobox_command }}"
+- name: vncviewer
+  include_tasks: vncviewer.yml
