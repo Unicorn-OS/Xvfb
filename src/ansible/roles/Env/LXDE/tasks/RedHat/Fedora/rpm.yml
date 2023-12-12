@@ -1,1 +1,8 @@
 ---
+- name: install LXDE
+  ansible.builtin.dnf:
+    name:
+      - lxde-common
+      - lxterminal
+    state: latest
+  become: true
