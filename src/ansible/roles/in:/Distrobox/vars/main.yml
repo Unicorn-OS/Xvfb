@@ -2,8 +2,10 @@ home_dir: "{{ ansible_env.HOME }}/distrobox/{{ container_name }}"
 
 bin_dir: "{{ ansible_env.HOME }}/.local/bin"
 
-install_Ansible: "{{ bin_dir }}/install-Ansible.sh"
+install_Ansible: "install_Ansible.sh"
 
-run_Ansible: "{{ bin_dir }}/run-Ansible.sh"
+install_Ansible_path: "{{ bin_dir }}/install-Ansible.sh"
 
-ansible_command: "sh {{ run_Ansible }}"
+run_Ansible: "run_Ansible.sh"
+
+run_Ansible_path: "{{ bin_dir }}/{{ run_Ansible }}"
