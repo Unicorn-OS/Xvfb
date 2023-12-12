@@ -1,10 +1,9 @@
 - hosts: test #, localhost #, fedora, ubuntu
   vars:
-    debug: True
-    env_desktop: LXDE # Openbox
-    # debug_breakpoint: True
     ansible_become_password: u
-
+  vars_files:
+    - vars/Env.yml
+    - vars/debug.yml
   roles:
   - in:/container
   - .test/start
