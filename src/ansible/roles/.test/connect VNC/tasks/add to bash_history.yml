@@ -1,0 +1,11 @@
+- name: Add to .bash_history
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.bash_history"
+    line: "{{ Remmina_start }}"
+  when: default_viewer == "Remmina"
+
+- name: Add to .bash_history
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.bash_history"
+    line: "{{ vncviewer_start }}"
+  when: default_viewer == "tigervnc"

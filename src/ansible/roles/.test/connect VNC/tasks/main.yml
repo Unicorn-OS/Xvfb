@@ -1,8 +1,15 @@
 - name: Remmina
   include_tasks: Remmina.yml
+  when: default_viewer == "Remmina"
 
-- name: vncviewer
-  include_tasks: vncviewer.yml
+- name: tigervnc
+  include_tasks: tigervnc.yml
+  when: default_viewer == "tigervnc"
+
+- name: add to .bash_history
+  include_tasks: add to bash_history.yml
+  when: add_to_bash_history
 
 - name: Start
   include_tasks: start.yml 
+  when: not debug
