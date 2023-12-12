@@ -1,0 +1,24 @@
+---
+- name: Toolbox container exists?
+  containers.podman.podman_container_info:
+    name: "{{ distrobox_container_name }}"
+  register: distrobox_status
+
+- name: debug
+  debug:
+    msg: Create Toolbox!
+  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != distrobox_container_name
+
+# ~/distrobox/$container
+
+- name: create Distrobox
+  ansible.builtin.shell: "distrobox create --pull --image ubuntu --name {{ container_name }} --home {{ ansible_env.HOME }}/distrobox/{{ container_name }}"
+  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != distrobox_container_name
+  async: 3600
+  poll: 15
+
+- name: Install Ansible in Distrobox
+  ansible.builtin.template:
+    src: install-Ansible.sh.j2
+    dest: "{{ bin_dir }}/install-Ansible.sh"
+    mode: '0755'

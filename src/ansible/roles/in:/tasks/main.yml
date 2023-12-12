@@ -1,0 +1,15 @@
+- name: in Toolbox
+  ansible.builtin.include_role:
+    name: "in:/Toolbox"
+  when: in_Toolbox
+
+- name: in Distrobox
+  ansible.builtin.include_role:
+    name: "in:/Distrobox"
+  when: in_Distrobox
+
+- name: in Podman
+  ansible.builtin.include_role:
+    name: "in:/Podman"
+  when: in_Podman
+
