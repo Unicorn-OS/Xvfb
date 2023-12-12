@@ -1,1 +1,3 @@
 bin_dir: "{{ ansible_env.HOME }}/.local/bin"
+
+home_dir: "{{ ansible_env.HOME }}/distrobox/{{ container_name }}"

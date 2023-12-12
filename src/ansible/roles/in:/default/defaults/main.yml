@@ -1,0 +1,3 @@
+in_Distrobox: True
+in_Toolbox: False
+in_Podman: False

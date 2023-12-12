@@ -1,0 +1,7 @@
+container_name: xvfb_test
+
+container_name_distrobox: "{{ container_name }}_ubuntu"
+container_image_distrobox: ubuntu:latest
+
+container_name_toolbox: "{{ container_name }}_fedora"
+container_image_toolbox: fedora:latest

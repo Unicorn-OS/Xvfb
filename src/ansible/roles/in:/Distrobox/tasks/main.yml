@@ -1,24 +1,41 @@
 ---
-- name: Toolbox container exists?
+- name: Distrobox container exists?
   containers.podman.podman_container_info:
-    name: "{{ distrobox_container_name }}"
+    name: "{{ container_name_distrobox }}"
   register: distrobox_status
 
 - name: debug
   debug:
-    msg: Create Toolbox!
-  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != distrobox_container_name
+    msg: "Create Distrobox!"
+  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox
 
-# ~/distrobox/$container
+- name: Create home directory
+  ansible.builtin.file:
+    path: "{{ bin_dir }}"
+    state: directory
+  when: separate_home_directory
 
-- name: create Distrobox
-  ansible.builtin.shell: "distrobox create --pull --image ubuntu --name {{ container_name }} --home {{ ansible_env.HOME }}/distrobox/{{ container_name }}"
-  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != distrobox_container_name
+- name: create Distrobox with Home Dir
+  ansible.builtin.shell: "distrobox create --pull --image {{ container_image_distrobox }} --name {{ container_name_distrobox }} --home {{ home_dir }}"
   async: 3600
   poll: 15
+  when: separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name)
 
-- name: Install Ansible in Distrobox
+- name: create Distrobox
+  ansible.builtin.shell: "distrobox create --pull --image {{ container_image_distrobox }} --name {{ container_name_distrobox }}"
+  async: 3600
+  poll: 15
+  when: not separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name)
+
+- name: Create bin directory
+  ansible.builtin.file:
+    path: "{{ bin_dir }}"
+    state: directory
+
+- name: template Ansible
   ansible.builtin.template:
     src: install-Ansible.sh.j2
     dest: "{{ bin_dir }}/install-Ansible.sh"
     mode: '0755'
+
+# - name: Install Ansible in Distrobox

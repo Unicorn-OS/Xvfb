@@ -1,4 +1,0 @@
-container_name: xvfb_test
-
-distrobox_container_name: ubuntu:latest
-toolbox_container_name: fedora:latest
