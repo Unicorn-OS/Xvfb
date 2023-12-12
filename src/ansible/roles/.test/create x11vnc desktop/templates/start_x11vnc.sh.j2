@@ -1,0 +1,1 @@
+sudo x11vnc -create -env FD_PROG={{ desktop }} -env X11VNC_CREATE_GEOM=${% raw %}{{% endraw %}{{ DISPLAY }}-{{ width }}x{{ height }}x{{ bit_per_pixel }}{% raw %}}{% endraw %} -nopw -listen 127.0.0.1 -reopen -forever &

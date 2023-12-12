@@ -1,7 +1,8 @@
 - hosts: test #, localhost #, fedora, ubuntu
   vars:
+    debug: True
     ansible_become_password: u
 
   roles:
   - in:/container
-  - .test/start x11vnc desktop
+  - .test/start

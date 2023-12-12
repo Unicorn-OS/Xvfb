@@ -1,0 +1,5 @@
+connection: "127.0.0.1"
+
+start_script: "connect_vncviewer.sh"
+
+start_script_path: "{{ bin_dir }}/{{ start_script }}"
