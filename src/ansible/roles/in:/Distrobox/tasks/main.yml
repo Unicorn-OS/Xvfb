@@ -20,6 +20,7 @@
   async: 3600
   poll: 15
   when: separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox)
+  notify: Install Ansible
 
 - name: create Distrobox
   ansible.builtin.shell: "distrobox create --pull --image {{ container_image_distrobox }} --name {{ container_name_distrobox }}"
