@@ -1,5 +1,5 @@
 inDistrobox(){
-  distrobox create --pull --image ubuntu --name test --home ~/distrobox/test
+  distrobox create --pull --image ubuntu --name test --home ~/distrobox/testXvfb
 }
 
 Server(){
