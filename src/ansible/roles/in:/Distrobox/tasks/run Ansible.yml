@@ -1,4 +1,10 @@
 ---
+- name: template run-Ansible
+  ansible.builtin.template:
+    src: install-Ansible.sh.j2
+    dest: "{{ install_Ansible }}"
+    mode: '0755'
+
 - name: Run Ansible in Distrobox
   ansible.builtin.shell: "distrobox enter {{ container_name_distrobox }} -- {{ ansible_command }}"
   async: 3600
