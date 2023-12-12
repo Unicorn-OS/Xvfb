@@ -21,5 +21,5 @@ remmina_connection_dir: ".local/share/remmina"
 remmina_config_file: "remmina.pref"
 remmina_connection_file: group_vnc_quick-connect_127-0-0-1.remmina
 
-remmina_config_path: "{{ ansible_env.HOME }}/{{ remmina_config_dir}}/{{ remmina_config_file }}"
-remmina_connection_path: "{{ ansible_env.HOME }}/{{ remmina_connection_dir }}/{{ remmina_connection_file }}"
+remmina_config_path: "{{ container_home_dir }}/{{ remmina_config_dir}}/{{ remmina_config_file }}"
+remmina_connection_path: "{{ container_home_dir }}/{{ remmina_connection_dir }}/{{ remmina_connection_file }}"

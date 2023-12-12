@@ -1,3 +1,2 @@
 dependencies:
-# - unios.Distrobox
-  - in:/get src
+- in:/get src
