@@ -9,7 +9,6 @@
   ansible.builtin.shell: "distrobox enter {{ container_name_distrobox }} -- sh {{ run_Ansible_path }}"
   async: 3600
   poll: 15
-  when: not debug
 
 - debug:
     msg: "distrobox enter {{ container_name_distrobox }} -- sh {{ run_Ansible_path }}"
