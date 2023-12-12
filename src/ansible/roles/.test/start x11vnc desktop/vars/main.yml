@@ -3,9 +3,9 @@ width: 1284
 height: 740
 bit_per_pixel: 16 #32
 
-start_script: "start_x11vnc.sh"
+start_script_template: "start_template.sh"
 
-start_script_path: "{{ bin_dir }}/{{ start_script }}"
+start_script_path: "{{ bin_dir }}/start_{{ default_env | lower }}.sh"
 
 distrobox_run_script: "distrobox enter {{ container_name_distrobox }} -- sh"
 
