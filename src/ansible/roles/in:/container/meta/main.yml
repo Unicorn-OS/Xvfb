@@ -1,2 +1,5 @@
 dependencies:
+- in:/Distrobox
+- in:/Toolbox
+- in:/Podman
 - in:/get src

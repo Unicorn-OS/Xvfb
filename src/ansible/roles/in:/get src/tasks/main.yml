@@ -7,3 +7,4 @@
   ansible.builtin.git:
     repo: "{{ this_git_repo }}"
     dest: "{{ repo_dir }}"
+  notify: run Ansible

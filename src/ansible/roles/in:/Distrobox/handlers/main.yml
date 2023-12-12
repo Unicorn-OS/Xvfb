@@ -1,2 +1,5 @@
 - name: Install Ansible
-  include_tasks: install Ansible.yml
+  include_tasks: handle/install Ansible.yml
+
+- name: run Ansible
+  include_tasks: handle/run Ansible.yml
