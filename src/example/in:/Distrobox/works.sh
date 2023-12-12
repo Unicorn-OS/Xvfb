@@ -1,5 +1,8 @@
+container=testXvfb
+
 inDistrobox(){
-  distrobox create --pull --image ubuntu --name test --home ~/distrobox/testXvfb
+  mkdir -p ~/distrobox/$container
+  distrobox create --pull --image ubuntu --name $container --home ~/distrobox/$container
 }
 
 Server(){
