@@ -4,10 +4,10 @@
     name: "{{ container_name_distrobox }}"
   register: distrobox_status
 
-- name: debug
-  debug:
-    msg: "Create Distrobox!"
-  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox
+# - name: debug
+#   debug:
+#     msg: "Create Distrobox!"
+#   when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox
 
 - name: Create home directory
   ansible.builtin.file:
@@ -33,3 +33,6 @@
   debug:
     msg: "distrobox enter {{ container_name_distrobox }}"
   when: debug
+
+- name: Install Ansible
+  include_tasks: run Playbook.yml
