@@ -7,3 +7,5 @@ desktop: "/usr/bin/fluxbox"
 start_script: "start_x11vnc.sh"
 
 start_script_path: "{{ bin_dir }}/{{ start_script }}"
+
+distrobox_command: "distrobox enter {{ container_name_distrobox }} -- sh {{ start_script_path }}"
