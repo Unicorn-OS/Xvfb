@@ -3,6 +3,7 @@ container=testXvfb
 inDistrobox(){
   mkdir -p ~/distrobox/$container
   distrobox create --pull --image ubuntu --name $container --home ~/distrobox/$container
+  distrobox enter $container
 }
 
 Server(){
