@@ -1,0 +1,7 @@
+this_git_repo: "https://github.com/Unicorn-OS/Xvfb.git"
+
+src_dir: "{{ ansible_env.HOME }}/.uni/src"
+
+repo_name: "{{ this_git_repo | regex_search('[a-zA-Z0-9_.-]*(?=.git$)') }}"
+
+repo_dir: "{{ src_dir }}/{{ repo_name }}"

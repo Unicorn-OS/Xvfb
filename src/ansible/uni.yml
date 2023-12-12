@@ -3,5 +3,6 @@
     ansible_become_password: u
 
   roles:
-  - Xvfb
+  - in:/get src
+  # - Xvfb
   # - x11vnc
