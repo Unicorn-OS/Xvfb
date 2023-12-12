@@ -1,5 +1,5 @@
 ---
-- name: template run-Ansible
+- name: template run_Ansible
   ansible.builtin.template:
     src: "{{ run_Ansible }}.j2"
     dest: "{{ run_Ansible_path }}"
