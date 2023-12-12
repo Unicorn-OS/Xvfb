@@ -16,4 +16,4 @@
   when: debug
 
 - meta: end_play
-  when: debug
+  when: debug_breakpoint

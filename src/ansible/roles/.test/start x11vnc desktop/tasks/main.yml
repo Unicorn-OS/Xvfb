@@ -5,16 +5,16 @@
     mode: '0755'
 
 - name: Run start_X11vnc
-  ansible.builtin.shell: "{{ distrobox_command }}"
+  ansible.builtin.shell: "{{ start_x11vnc }}"
   async: 3600
   poll: 15
   when: not debug
 
 - debug:
-    msg: "{{ distrobox_command }}"
+    msg: "{{ start_x11vnc }}"
   when: debug
 
 - name: Add to .bash_history
   ansible.builtin.lineinfile:
     path: "{{ ansible_env.HOME }}/.bash_history"
-    line: "{{ distrobox_command }}"
+    line: "{{ start_x11vnc }}"
