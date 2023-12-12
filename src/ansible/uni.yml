@@ -1,6 +1,7 @@
 - hosts: test #, localhost #, fedora, ubuntu
   vars:
     debug: True
+    default_env: LXDE # Openbox
     # debug_breakpoint: True
     ansible_become_password: u
 

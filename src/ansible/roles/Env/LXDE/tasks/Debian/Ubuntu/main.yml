@@ -1,0 +1,7 @@
+---
+
+- name: Install LXDE minimal
+  ansible.builtin.apt:
+    pkg:
+    - lxde-core
+  become: true
