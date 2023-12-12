@@ -27,3 +27,8 @@
   poll: 15
   when: not separate_home_directory and (distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox)
   notify: Install Ansible
+
+- name: Test
+  debug:
+    msg: "distrobox enter {{ container_name_distrobox }}"
+  when: debug
