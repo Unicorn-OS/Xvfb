@@ -1,8 +1,8 @@
 ---
 - name: template run-Ansible
   ansible.builtin.template:
-    src: install-Ansible.sh.j2
-    dest: "{{ install_Ansible }}"
+    src: run-Ansible.sh.j2
+    dest: "{{ run_Ansible }}"
     mode: '0755'
 
 - name: Run Ansible in Distrobox

@@ -4,4 +4,6 @@ bin_dir: "{{ ansible_env.HOME }}/.local/bin"
 
 install_Ansible: "{{ bin_dir }}/install-Ansible.sh"
 
-ansible_command: "cd {{ repo_dir }}/src/ansible && ansible-playbook in\ Container.yml"
+run_Ansible: "{{ bin_dir }}/run-Ansible.sh"
+
+ansible_command: "sh {{ run_Ansible }}"
