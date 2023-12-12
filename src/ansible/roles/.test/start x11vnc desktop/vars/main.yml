@@ -8,6 +8,6 @@ start_script: "start_x11vnc.sh"
 
 start_script_path: "{{ bin_dir }}/{{ start_script }}"
 
-distrobox_command: "distrobox enter {{ container_name_distrobox }} -- sh"
+distrobox_run_script: "distrobox enter {{ container_name_distrobox }} -- sh"
 
-start_x11vnc: "{{ distrobox_command }} {{ start_script_path }}"
+start_x11vnc: "{{ distrobox_run_script }} {{ start_script_path }}"

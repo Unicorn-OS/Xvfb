@@ -1,0 +1,17 @@
+- name: Run Remmina_start.sh
+  ansible.builtin.shell: "{{ Remmina_start }}"
+  async: 3600
+  poll: 15
+  when: not debug
+
+- name: Run vncviewer_start.sh
+  ansible.builtin.shell: "{{ vncviewer_start }}"
+  async: 3600
+  poll: 15
+  when: tigervnc_viewer
+
+- name: Add to .bash_history
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.bash_history"
+    line: "{{ Remmina_start }}"
+  when: add_to_bash_history

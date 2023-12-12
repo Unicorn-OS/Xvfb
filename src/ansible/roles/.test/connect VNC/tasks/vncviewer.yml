@@ -4,13 +4,8 @@
     dest: "{{ vncviewer_path }}"
     mode: '0755'
 
-- name: Run connect_vncviewer
-  ansible.builtin.shell: "{{ start_vncviewer }}"
-  async: 3600
-  poll: 15
-  when: not debug
-
 - name: Add to .bash_history
   ansible.builtin.lineinfile:
     path: "{{ ansible_env.HOME }}/.bash_history"
-    line: "{{ start_vncviewer }}"
+    line: "{{ vncviewer_start }}"
+  when: add_to_bash_history

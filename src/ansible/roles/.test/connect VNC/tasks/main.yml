@@ -4,5 +4,5 @@
 - name: vncviewer
   include_tasks: vncviewer.yml
 
-- name: Remmina connection file
-  include_tasks: Remmina.yml 
+- name: Start
+  include_tasks: start.yml 

@@ -1,3 +1,9 @@
+- name: template Remmina
+  ansible.builtin.template:
+    src: "{{ Remmina }}.j2"
+    dest: "{{ Remmina_path }}"
+    mode: '0755'
+
 - name: Create config & local directory
   ansible.builtin.file:
     path: "{{ item }}"

@@ -1,20 +1,15 @@
 vnc_connection: "127.0.0.1"
+distrobox_run_script: "distrobox enter {{ container_name_distrobox }} -- sh"
 
-vncviewer: "connect_vncviewer.sh"
-
+vncviewer: "tigervnc_viewer.sh"
 vncviewer_path: "{{ bin_dir }}/{{ vncviewer }}"
+vncviewer_start: "{{ distrobox_run_script }} {{ vncviewer_path }}"
 
 Remmina: "connect_Remmina.sh"
-
 Remmina_path: "{{ bin_dir }}/{{ Remmina }}"
+Remmina_start: "{{ distrobox_run_script }} {{ Remmina_path }}"
 
-distrobox_command: "distrobox enter {{ container_name_distrobox }} -- sh"
-
-start_vncviewer: "{{ distrobox_command }} {{ vncviewer_path }}"
-
-start_Remmina: "{{ distrobox_command }} {{ Remmina_path }}"
-
-
+# Todo: Make this a Dictionary! for cleaner code
 remmina_config_dir: ".config/remmina"
 remmina_connection_dir: ".local/share/remmina"
 
