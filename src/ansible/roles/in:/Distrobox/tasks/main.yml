@@ -1,6 +1,6 @@
 ---
-# - name: create Container
-#   include_tasks: create Container.yml
+- name: create Container
+  include_tasks: create Container.yml
 
-# - name: run Ansible
-#   include_tasks: run Ansible.yml
+- name: run Ansible
+  include_tasks: run Ansible.yml
