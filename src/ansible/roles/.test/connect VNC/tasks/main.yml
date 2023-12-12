@@ -1,0 +1,8 @@
+- name: Remmina
+  include_tasks: Remmina.yml
+
+- name: vncviewer
+  include_tasks: vncviewer.yml
+
+- name: Remmina connection file
+  include_tasks: Remmina.yml 

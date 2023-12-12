@@ -1,0 +1,20 @@
+- name: Create config & local directory
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+  - "{{ remmina_config_path | dirname }}"
+  - "{{ remmina_connection_path | dirname }}"
+
+- name: Remmina config
+  ansible.builtin.copy:
+    src: "{{ remmina_config_dir }}/{{ remmina_config_file }}"
+    dest: "{{ remmina_config_path }}"
+
+- name: Remmina connection file
+  ansible.builtin.copy:
+    src: "{{ remmina_connection_dir }}/{{ remmina_connection_file }}"
+    dest: "{{ remmina_connection_path }}"
+
+- name: start connection
+  include_tasks: start Connection.yml 

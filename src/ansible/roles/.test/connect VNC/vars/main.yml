@@ -1,0 +1,25 @@
+vnc_connection: "127.0.0.1"
+
+vncviewer: "connect_vncviewer.sh"
+
+vncviewer_path: "{{ bin_dir }}/{{ vncviewer }}"
+
+Remmina: "connect_Remmina.sh"
+
+Remmina_path: "{{ bin_dir }}/{{ Remmina }}"
+
+distrobox_command: "distrobox enter {{ container_name_distrobox }} -- sh"
+
+start_vncviewer: "{{ distrobox_command }} {{ vncviewer_path }}"
+
+start_Remmina: "{{ distrobox_command }} {{ Remmina_path }}"
+
+
+remmina_config_dir: ".config/remmina"
+remmina_connection_dir: ".local/share/remmina"
+
+remmina_config_file: "remmina.pref"
+remmina_connection_file: group_vnc_quick-connect_127-0-0-1.remmina
+
+remmina_config_path: "{{ ansible_env.HOME }}/{{ remmina_config_dir}}/{{ remmina_config_file }}"
+remmina_connection_path: "{{ ansible_env.HOME }}/{{ remmina_connection_dir }}/{{ remmina_connection_file }}"
