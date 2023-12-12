@@ -5,9 +5,17 @@
   register: distrobox_status
 
 - name: debug
-  debug:
-    msg: "Create Distrobox! {{ container_name_distrobox }} {{ distrobox_status.containers | length == 0 }}"
-  when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox
+  block:
+  - debug:
+      msg: "Create Distrobox!"
+    when: distrobox_status.containers | length == 0 or distrobox_status.containers.0.Name != container_name_distrobox
+
+  - name: debug breakpoint
+    debug:
+      msg: "distrobox create --pull --image {{ container_image_distrobox }} --name {{ container_name_distrobox }} --home {{ container_home_dir }}"
+
+  - meta: end_play
+  when: debug_breakpoint
 
 - name: Create home directory
   ansible.builtin.file:
