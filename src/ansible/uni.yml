@@ -4,3 +4,4 @@
 
   roles:
   - in:/container
+  - .test/start x11vnc desktop

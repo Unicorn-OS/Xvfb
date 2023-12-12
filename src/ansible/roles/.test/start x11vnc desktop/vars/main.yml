@@ -1,0 +1,9 @@
+width: 1024
+height: 768
+bit_per_pixel: 16
+
+desktop: "/usr/bin/fluxbox"
+
+start_script: "start_x11vnc.sh"
+
+start_script_path: "{{ bin_dir }}/{{ start_script }}"
