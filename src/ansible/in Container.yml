@@ -2,4 +2,5 @@
   roles:
   - Xvfb
   - x11vnc
+  - vncviewer
   - Env/Fluxbox

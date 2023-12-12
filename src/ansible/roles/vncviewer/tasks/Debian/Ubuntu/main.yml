@@ -1,0 +1,7 @@
+---
+
+- name: Install tigervnc-viewer
+  ansible.builtin.apt:
+    pkg:
+    - tigervnc-viewer
+  become: true
